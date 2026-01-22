@@ -90,9 +90,10 @@ body {
   background: rgba(0, 0, 0, 0.85);
   display: none;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 100;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-overlay.active {
@@ -109,7 +110,6 @@ body {
   border-radius: 20px;
   text-align: center;
   position: relative;
-  overflow-y: auto;
 }
 
 .bank-qr {
@@ -135,7 +135,6 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
   gap: 20px;
   margin-top: 20px;
-  overflow-y: auto;
 }
 
 .close-btn {
