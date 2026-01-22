@@ -6,8 +6,10 @@ const qrButton = document.getElementById('qrButton');
 const qrmodal = document.getElementById('qr-modal');
 const bankmodal = document.getElementById('bank-modal');
 const closeButton = document.getElementById('closeButton');
+const closeqr = document.getElementById('closeqr');
 
 const allqr = bankmodal.querySelectorAll('*');
+const allqrclose = bankmodal.querySelectorAll('.close-btn');
 
 const bdoqr = document.getElementById('bdo-qr');
 const unionbankqr = document.getElementById('unionbank-qr');
@@ -90,6 +92,16 @@ cimbButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
   qrmodal.classList.remove('active');
 });
+
+allqrclose.forEach(button => {
+  button.addEventListener('click', () => {
+    allqr.forEach( element => {
+      element.classList.remove('active');
+    });
+    bankmodal.classList.remove('active');
+  });
+});
+
 
 // Close when clicking outside the panel
 window.addEventListener('click', (e) => {
