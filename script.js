@@ -33,6 +33,8 @@ const cimbButton = document.getElementById('cimb');
 
 qrButton.addEventListener('click', () => {
   qrmodal.classList.add('active');
+  document.body.style.position = 'fixed'
+  document.body.style.width = '100%';
 });
 
 bdoButton.addEventListener('click', () => {
@@ -98,6 +100,8 @@ window.addEventListener('click', (e) => {
     });
   } else if (e.target === qrmodal) {
     qrmodal.classList.remove('active');
+    document.body.style.position = ''
+    document.body.style.width = '';
   }
 });
 
