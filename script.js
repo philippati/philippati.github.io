@@ -3,7 +3,10 @@ lucide.createIcons();
 
 // Modal Logic
 const qrButton = document.getElementById('qrButton');
+const gamesButton = document.getElementById('gamesButton');
 const qrmodal = document.getElementById('qr-modal');
+const gamesModal = document.getElementById('games-modal');
+const gamesCloseButton = document.getElementById('gamesCloseButton');
 const bankmodal = document.getElementById('bank-modal');
 const closeButton = document.getElementById('closeButton');
 const closeqr = document.getElementById('closeqr');
@@ -37,6 +40,18 @@ qrButton.addEventListener('click', () => {
   qrmodal.classList.add('active');
   document.body.style.position = 'fixed'
   document.body.style.width = '100%';
+});
+
+gamesButton.addEventListener('click', () => {
+  gamesModal.classList.add('active');
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+});
+
+gamesCloseButton.addEventListener('click', () => {
+  gamesModal.classList.remove('active');
+  document.body.style.position = '';
+  document.body.style.width = '';
 });
 
 bdoButton.addEventListener('click', () => {
@@ -112,7 +127,11 @@ window.addEventListener('click', (e) => {
     });
   } else if (e.target === qrmodal) {
     qrmodal.classList.remove('active');
-    document.body.style.position = ''
+    document.body.style.position = '';
+    document.body.style.width = '';
+  } else if (e.target === gamesModal) {
+    gamesModal.classList.remove('active');
+    document.body.style.position = '';
     document.body.style.width = '';
   }
 });
