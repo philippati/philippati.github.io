@@ -4,9 +4,12 @@ lucide.createIcons();
 // Modal Logic
 const qrButton = document.getElementById('qrButton');
 const gamesButton = document.getElementById('gamesButton');
+const toolsButton = document.getElementById('toolsButton');
 const qrmodal = document.getElementById('qr-modal');
 const gamesModal = document.getElementById('games-modal');
+const toolsModal = document.getElementById('tools-modal');
 const gamesCloseButton = document.getElementById('gamesCloseButton');
+const toolsCloseButton = document.getElementById('toolsCloseButton');
 const bankmodal = document.getElementById('bank-modal');
 const closeButton = document.getElementById('closeButton');
 const closeqr = document.getElementById('closeqr');
@@ -50,6 +53,18 @@ gamesButton.addEventListener('click', () => {
 
 gamesCloseButton.addEventListener('click', () => {
   gamesModal.classList.remove('active');
+  document.body.style.position = '';
+  document.body.style.width = '';
+});
+
+toolsButton.addEventListener('click', () => {
+  toolsModal.classList.add('active');
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+});
+
+toolsCloseButton.addEventListener('click', () => {
+  toolsModal.classList.remove('active');
   document.body.style.position = '';
   document.body.style.width = '';
 });
@@ -131,6 +146,10 @@ window.addEventListener('click', (e) => {
     document.body.style.width = '';
   } else if (e.target === gamesModal) {
     gamesModal.classList.remove('active');
+    document.body.style.position = '';
+    document.body.style.width = '';
+  } else if (e.target === toolsModal) {
+    toolsModal.classList.remove('active');
     document.body.style.position = '';
     document.body.style.width = '';
   }
